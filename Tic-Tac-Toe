@@ -1,0 +1,102 @@
+
+if __name__ == '__main__':
+    A = '___'
+    B = '___'
+    C = '___'
+    print("To play enter a command in the following format:")
+    print("'Row number''Column number''O or X'")
+    print("Example: '23O' or '31X'")
+    l = 1
+    while l == 1:
+        if '_' not in A:
+            if '_' not in B:
+                if '_' not in C:
+                    print('Game End')
+                    break
+        s = str(input("Move: "))
+        print(s[2])
+        # check()
+        i = int(s[0])
+        j = int(s[1])
+        p = 6 % i
+        q = 6 % j
+        r = s[2]
+        t = 'XO'
+        if not (p == 0):
+            print("In-correct Command")
+        elif not (q == 0):
+            print("In-correct Command")
+        elif r not in t:
+            print("In-correct Command")
+        if (i == 1):
+            if (j == 1):
+                A = "".join((s[2:], A[1:]))
+            if (j == 2):
+                A = "".join((A[:1], s[2:], A[2:]))
+            if (j == 3):
+                A = "".join((A[:2], s[2:]))
+        if (i == 2):
+            if (j == 1):
+                B = "".join((s[2:], B[1:]))
+            if (j == 2):
+                B = "".join((B[:1], s[2:], B[2:]))
+            if (j == 3):
+                B = "".join((B[:2], s[2:]))
+        if (i == 3):
+            if (j == 1):
+                C = "".join((s[2:], C[1:]))
+            if (j == 2):
+                C = "".join((C[:1], s[2:], C[2:]))
+            if (j == 3):
+                C = "".join((C[:2], s[2:]))
+        if ((A[0] == A[1] == A[2] == 'O') or (A[0] == A[1] == A[2] == 'X')):
+            print(A)
+            print(B)
+            print(C)
+            print('Congratulation!!! ' + A[0] + ' Won')
+            break
+        if ((B[0] == B[1] == B[2] == 'O') or (B[0] == B[1] == B[2] == 'X')):
+            print(A)
+            print(B)
+            print(C)
+            print('Congratulation!!! ' + B[0] + ' Won')
+            break
+        if ((C[0] == C[1] == C[2] == 'O') or (C[0] == C[1] == C[2] == 'X')):
+            print(A)
+            print(B)
+            print(C)
+            print('Congratulation!!! ' + C[0] + ' Won')
+            break
+        if ((A[0] == B[0] == C[0] == 'O') or (A[0] == B[0] == C[0] == 'X')):
+            print(A)
+            print(B)
+            print(C)
+            print('Congratulation!!! ' + A[0] + ' Won')
+            break
+        if ((A[1] == B[1] == C[1] == 'O') or (A[1] == B[1] == C[1] == 'X')):
+            print(A)
+            print(B)
+            print(C)
+            print('Congratulation!!! ' + A[1] + ' Won')
+            break
+        if ((A[2] == B[2] == C[2] == 'O') or (A[2] == B[2] == C[2] == 'X')):
+            print(A)
+            print(B)
+            print(C)
+            print('Congratulation!!! ' + A[2] + ' Won')
+            break
+        if ((A[0] == B[1] == C[2] == 'O') or (A[0] == B[1] == C[2] == 'X')):
+            print(A)
+            print(B)
+            print(C)
+            print('Congratulation!!! ' + A[0] + ' Won')
+            break
+        if ((A[2] == B[1] == C[0] == 'O') or (A[2] == B[1] == C[0] == 'X')):
+            print(A)
+            print(B)
+            print(C)
+            print('Congratulation!!! ' + A[2] + ' Won')
+            break
+        print(A)
+        print(B)
+        print(C)
